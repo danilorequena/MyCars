@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF038807240F327400A1D5E6 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF038806240F327400A1D5E6 /* Car.swift */; };
+		FF038809240F354800A1D5E6 /* Rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF038808240F354800A1D5E6 /* Rest.swift */; };
 		FF5731D1240E7CED003ABB10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5731D0240E7CED003ABB10 /* AppDelegate.swift */; };
 		FF5731D3240E7CED003ABB10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5731D2240E7CED003ABB10 /* SceneDelegate.swift */; };
 		FF5731D5240E7CED003ABB10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5731D4240E7CED003ABB10 /* ViewController.swift */; };
@@ -14,9 +16,14 @@
 		FF5731DB240E7CED003ABB10 /* MyCars.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF5731D9240E7CED003ABB10 /* MyCars.xcdatamodeld */; };
 		FF5731DD240E7CF2003ABB10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF5731DC240E7CF2003ABB10 /* Assets.xcassets */; };
 		FF5731E0240E7CF2003ABB10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5731DE240E7CF2003ABB10 /* LaunchScreen.storyboard */; };
+		FF5731EA240F1E4E003ABB10 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5731E9240F1E4E003ABB10 /* CarViewController.swift */; };
+		FF5731EC240F1E70003ABB10 /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5731EB240F1E70003ABB10 /* AddEditViewController.swift */; };
+		FF5731F0240F1F33003ABB10 /* CarsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5731EF240F1F33003ABB10 /* CarsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF038806240F327400A1D5E6 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		FF038808240F354800A1D5E6 /* Rest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rest.swift; sourceTree = "<group>"; };
 		FF5731CD240E7CED003ABB10 /* MyCars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5731D0240E7CED003ABB10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF5731D2240E7CED003ABB10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +33,9 @@
 		FF5731DC240E7CF2003ABB10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF5731DF240E7CF2003ABB10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF5731E1240E7CF2003ABB10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF5731E9240F1E4E003ABB10 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
+		FF5731EB240F1E70003ABB10 /* AddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
+		FF5731EF240F1F33003ABB10 /* CarsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +70,35 @@
 			children = (
 				FF5731D0240E7CED003ABB10 /* AppDelegate.swift */,
 				FF5731D2240E7CED003ABB10 /* SceneDelegate.swift */,
-				FF5731D4240E7CED003ABB10 /* ViewController.swift */,
-				FF5731D6240E7CED003ABB10 /* Main.storyboard */,
+				FF5731EE240F1E9D003ABB10 /* Views */,
+				FF5731ED240F1E84003ABB10 /* Controllers */,
 				FF5731DC240E7CF2003ABB10 /* Assets.xcassets */,
-				FF5731DE240E7CF2003ABB10 /* LaunchScreen.storyboard */,
 				FF5731E1240E7CF2003ABB10 /* Info.plist */,
 				FF5731D9240E7CED003ABB10 /* MyCars.xcdatamodeld */,
 			);
 			path = MyCars;
+			sourceTree = "<group>";
+		};
+		FF5731ED240F1E84003ABB10 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FF5731E9240F1E4E003ABB10 /* CarViewController.swift */,
+				FF038806240F327400A1D5E6 /* Car.swift */,
+				FF038808240F354800A1D5E6 /* Rest.swift */,
+				FF5731EF240F1F33003ABB10 /* CarsTableViewController.swift */,
+				FF5731EB240F1E70003ABB10 /* AddEditViewController.swift */,
+				FF5731D4240E7CED003ABB10 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FF5731EE240F1E9D003ABB10 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF5731D6240E7CED003ABB10 /* Main.storyboard */,
+				FF5731DE240E7CF2003ABB10 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +173,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF5731D5240E7CED003ABB10 /* ViewController.swift in Sources */,
+				FF5731EC240F1E70003ABB10 /* AddEditViewController.swift in Sources */,
+				FF038807240F327400A1D5E6 /* Car.swift in Sources */,
+				FF038809240F354800A1D5E6 /* Rest.swift in Sources */,
+				FF5731EA240F1E4E003ABB10 /* CarViewController.swift in Sources */,
 				FF5731D1240E7CED003ABB10 /* AppDelegate.swift in Sources */,
+				FF5731F0240F1F33003ABB10 /* CarsTableViewController.swift in Sources */,
 				FF5731DB240E7CED003ABB10 /* MyCars.xcdatamodeld in Sources */,
 				FF5731D3240E7CED003ABB10 /* SceneDelegate.swift in Sources */,
 			);
