@@ -24,7 +24,7 @@ class CarsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Rest.loadCars(onComplete: { (cars) in
+        REST.loadCars(onComplete: { (cars) in
             self.cars = cars
             DispatchQueue.main.async {
                 self.tableView.reloadData()

@@ -19,6 +19,8 @@ class AddEditViewController: UIViewController {
     @IBOutlet weak var btAddEdit: UIButton!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     
+    // MARK: - Properties
+    var car: Car!
     
     //MARK: - Super Methods
     override func viewDidLoad() {
@@ -30,6 +32,27 @@ class AddEditViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func addEdit(_ sender: UIButton) {
+        if car == nil {
+            car = Car()
+        }
+        car.name = tfName.text!
+        car.brand = tfBrand.text!
+        if  tfPrice.text!.isEmpty {tfPrice.text = "0"}
+        car.price = Double(tfPrice.text!)!
+        car.gasType = scGasType.selectedSegmentIndex
+        
+        REST.save(car: car) { (success) in
+            self.goBack()
+        }
+    }
+    
+    //MARK: - Methods
+    
+    func goBack() {
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+            
+        }
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {

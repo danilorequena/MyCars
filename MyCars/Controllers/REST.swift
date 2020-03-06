@@ -17,7 +17,7 @@ enum CarError {
     case invalidJSON
 }
 
-class Rest {
+class REST {
     private static let basePath = "https://carangas.herokuapp.com/cars"
     
     private static let configuration: URLSessionConfiguration = {
@@ -57,6 +57,38 @@ class Rest {
                 }
             } else {
                 onError(.taskError(error: error!))
+            }
+        }
+        dataTask.resume()
+    }
+    
+    class func save(car: Car, onComplete: @escaping (Bool) -> Void) {
+        guard let url = URL(string: basePath) else {
+            onComplete(false)
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        guard let json = try?JSONEncoder().encode(car) else {
+            onComplete(false)
+            return
+        }
+//        do {
+//            let json = try JSONEncoder().encode(car)
+//        } catch {
+//            print(error.localizedDescription)
+//        } ---- jeito principal de se fazer isso
+        request.httpBody = json
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            if error == nil {
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200, let _ = data else {
+                    onComplete(false)
+                    return
+                }
+                onComplete(true)
+            } else {
+                onComplete(false)
             }
         }
         dataTask.resume()
