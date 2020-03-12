@@ -46,7 +46,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="wfF-PQ-WVM" kind="show" id="otB-IP-J1N"/>
+                                    <segue destination="wfF-PQ-WVM" kind="show" identifier="viewSegue" id="otB-IP-J1N"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -58,7 +58,7 @@
                     <navigationItem key="navigationItem" title="MyCars" id="dTH-05-ASZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6JL-Ft-SFB">
                             <connections>
-                                <segue destination="IUg-qE-sdr" kind="presentation" id="UzB-0O-WRk"/>
+                                <segue destination="IUg-qE-sdr" kind="presentation" identifier="addSegue" id="UzB-0O-WRk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -138,7 +138,7 @@
                                     <navigationItem title="Cadastro" id="rAT-aa-tOK">
                                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Wzv-wc-nRe">
                                             <connections>
-                                                <action selector="cancel:" destination="IUg-qE-sdr" id="XIz-1B-ASq"/>
+                                                <action selector="btCancel:" destination="IUg-qE-sdr" id="XIz-1B-ASq"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -185,7 +185,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Lcn-DN-8Ng">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Lcn-DN-8Ng">
                                 <rect key="frame" x="169" y="455" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
@@ -239,6 +239,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UzB-0O-WRk"/>
+        <segue reference="bky-oA-WvY"/>
     </inferredMetricsTieBreakers>
 </document>
