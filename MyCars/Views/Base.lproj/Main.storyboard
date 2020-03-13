@@ -98,12 +98,30 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjM-R0-wjH">
+                                <rect key="frame" x="0.0" y="263" width="375" height="549"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ynT-oR-SDE">
+                                <rect key="frame" x="169" y="519" width="37" height="37"/>
+                                <color key="color" name="main"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="ynT-oR-SDE" firstAttribute="centerX" secondItem="cjM-R0-wjH" secondAttribute="centerX" id="1cE-SY-zSh"/>
                             <constraint firstItem="RoW-r3-q9v" firstAttribute="trailing" secondItem="UiF-Ca-0Yn" secondAttribute="trailing" constant="16" id="3K4-Xq-Zpj"/>
                             <constraint firstItem="UiF-Ca-0Yn" firstAttribute="leading" secondItem="RoW-r3-q9v" secondAttribute="leading" constant="16" id="9cY-At-Uyb"/>
+                            <constraint firstItem="ynT-oR-SDE" firstAttribute="centerY" secondItem="cjM-R0-wjH" secondAttribute="centerY" id="Gcw-PP-BNk"/>
+                            <constraint firstItem="cjM-R0-wjH" firstAttribute="top" secondItem="UiF-Ca-0Yn" secondAttribute="bottom" constant="30" id="RQw-RH-uOZ"/>
+                            <constraint firstAttribute="bottom" secondItem="cjM-R0-wjH" secondAttribute="bottom" id="VPB-ax-OdS"/>
+                            <constraint firstItem="cjM-R0-wjH" firstAttribute="trailing" secondItem="RoW-r3-q9v" secondAttribute="trailing" id="eYK-IE-RQC"/>
                             <constraint firstItem="UiF-Ca-0Yn" firstAttribute="top" secondItem="RoW-r3-q9v" secondAttribute="top" constant="16" id="mxP-bl-aB9"/>
+                            <constraint firstItem="cjM-R0-wjH" firstAttribute="leading" secondItem="RoW-r3-q9v" secondAttribute="leading" id="yG6-Jr-8AX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RoW-r3-q9v"/>
                     </view>
@@ -118,11 +136,13 @@
                         <outlet property="lbBrand" destination="01l-dL-6R2" id="SNF-LT-4te"/>
                         <outlet property="lbGas" destination="WPA-ZP-8yc" id="KqU-cy-MUl"/>
                         <outlet property="lbPrice" destination="J3I-F0-nFL" id="ATC-hM-omo"/>
+                        <outlet property="loading" destination="ynT-oR-SDE" id="I50-aF-i6d"/>
+                        <outlet property="webView" destination="cjM-R0-wjH" id="Pgh-8g-uz4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="20D-wq-vVv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1442" y="646"/>
+            <point key="canvasLocation" x="1440.8" y="645.81280788177344"/>
         </scene>
         <!--Add Edit View Controller-->
         <scene sceneID="gQw-Mu-R6K">
