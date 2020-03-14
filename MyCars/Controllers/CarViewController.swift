@@ -31,8 +31,8 @@ class CarViewController: UIViewController {
         super.viewWillAppear(animated)
         setupViews()
         
-        let name = (title! + "+" + car.brand).replacingOccurrences(of: " ", with: "+")
-        let urlString = "https://www.google.com.br/search?=q=\(name)&tbm=isch"
+        let name = (title! + "+" + car.name).replacingOccurrences(of: " ", with: "+")
+        let urlString = "https://www.google.com/search?q=\(name)&tbm=isch"
         let url = URL(string: urlString)!
         let urlRequest = URLRequest(url: url)
         
