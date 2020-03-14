@@ -12,8 +12,8 @@ class AddEditViewController: UIViewController {
 
     //MARK: - IBOutlets
     
-    @IBOutlet weak var tfBrand: UITextField!
     @IBOutlet weak var tfName: UITextField!
+    @IBOutlet weak var tfBrand: UITextField!
     @IBOutlet weak var tfPrice: UITextField!
     @IBOutlet weak var scGasType: UISegmentedControl!
     @IBOutlet weak var btAddEdit: UIButton!
@@ -42,8 +42,8 @@ class AddEditViewController: UIViewController {
         let btSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let btDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
         toolBar.items = [btCancel, btSpace, btDone]
-        tfBrand.inputAccessoryView = toolBar
-        tfBrand.inputView = pickerView
+        tfName.inputAccessoryView = toolBar
+        tfName.inputView = pickerView
         
         loadBrands()
 
@@ -59,8 +59,8 @@ class AddEditViewController: UIViewController {
         if car == nil {
             car = Car()
         }
-        car.name = tfName.text!
-        car.brand = tfBrand.text!
+        car.name = tfBrand.text!
+        car.brand = tfName.text!
         if  tfPrice.text!.isEmpty {tfPrice.text = "0"}
         car.price = Double(tfPrice.text!)!
         car.gasType = scGasType.selectedSegmentIndex
@@ -81,11 +81,10 @@ class AddEditViewController: UIViewController {
     
     func loadBrands() {
         REST.loadBrands { (brands) in
-            if let brands  = brands {
+            if let brands = brands {
                 self.brands = brands.sorted(by: {$0.fipe_name < $1.fipe_name})
                 DispatchQueue.main.async {
                     self.pickerView.reloadAllComponents()
-
                 }
             }
         }
@@ -93,16 +92,14 @@ class AddEditViewController: UIViewController {
     
     func goBack() {
         DispatchQueue.main.async {
-//            self.navigationController?.popViewController(animated: true)
-            self.dismiss(animated: true, completion: nil)
-            
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
     func checkContainsCar() {
         if car != nil {
-            tfBrand.text = car.brand
-            tfName.text = car.name
+            tfName.text = car.brand
+            tfBrand.text = car.name
             tfPrice.text = "\(car.price)"
             scGasType.selectedSegmentIndex = car.gasType
             btAddEdit.setTitle("Alterar carro", for: .normal)
@@ -110,12 +107,12 @@ class AddEditViewController: UIViewController {
     }
     
     @objc func cancel() {
-        tfBrand.resignFirstResponder()
+        tfName.resignFirstResponder()
     }
     
     @objc func done() {
-        tfBrand.text = brands[pickerView.selectedRow(inComponent: 0)].fipe_name
-        tfBrand.resignFirstResponder()
+        tfName.text = brands[pickerView.selectedRow(inComponent: 0)].fipe_name
+        tfName.resignFirstResponder()
     }
     
     @IBAction func btCancel(_ sender: UIBarButtonItem) {

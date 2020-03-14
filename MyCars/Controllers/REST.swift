@@ -30,7 +30,7 @@ class REST {
         let config  = URLSessionConfiguration.default
         config.httpAdditionalHeaders = ["Content-Type" : "application/json"]
         config.timeoutIntervalForRequest = 20.0
-        config.httpMaximumConnectionsPerHost = 5
+        config.httpMaximumConnectionsPerHost = 60
         return config
     }()
     private static let session = URLSession(configuration: configuration) //URLSession.shared
@@ -112,6 +112,7 @@ class REST {
     class func delete(car: Car, onComplete: @escaping (Bool) -> Void) {
            applyOparation(car: car, oparation: .delete, onComplete: onComplete)
        }
+    
     private class func applyOparation(car: Car, oparation: RESTOperation, onComplete: @escaping (Bool) -> Void) {
         let urlString = basePath + "/" + (car._id ?? "")
         guard let url = URL(string: urlString) else {

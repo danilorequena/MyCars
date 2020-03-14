@@ -58,7 +58,7 @@
                     <navigationItem key="navigationItem" title="MyCars" id="dTH-05-ASZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6JL-Ft-SFB">
                             <connections>
-                                <segue destination="IUg-qE-sdr" kind="presentation" identifier="addSegue" id="UzB-0O-WRk"/>
+                                <segue destination="IUg-qE-sdr" kind="show" identifier="addSegue" id="UzB-0O-WRk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -128,7 +128,7 @@
                     <navigationItem key="navigationItem" title="Title" id="SaQ-gf-sBG">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="uOt-pV-pxf">
                             <connections>
-                                <segue destination="IUg-qE-sdr" kind="presentation" id="bky-oA-WvY"/>
+                                <segue destination="IUg-qE-sdr" kind="show" id="bky-oA-WvY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -144,35 +144,23 @@
             </objects>
             <point key="canvasLocation" x="1440.8" y="645.81280788177344"/>
         </scene>
-        <!--Add Edit View Controller-->
+        <!--Cadastro-->
         <scene sceneID="gQw-Mu-R6K">
             <objects>
                 <viewController id="IUg-qE-sdr" customClass="AddEditViewController" customModule="MyCars" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cIc-HK-XDC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PYE-0M-NJI">
-                                <rect key="frame" x="0.0" y="10" width="375" height="108"/>
-                                <items>
-                                    <navigationItem title="Cadastro" id="rAT-aa-tOK">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Wzv-wc-nRe">
-                                            <connections>
-                                                <action selector="btCancel:" destination="IUg-qE-sdr" id="XIz-1B-ASq"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="YZY-kT-R99">
-                                <rect key="frame" x="16" y="134" width="343" height="285"/>
+                                <rect key="frame" x="16" y="140" width="343" height="285"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfv-ja-tl1">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Marca" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfv-ja-tl1">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Marca" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ew0-xr-aV6">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ew0-xr-aV6">
                                         <rect key="frame" x="0.0" y="62" width="343" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -206,29 +194,27 @@
                                 </subviews>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Lcn-DN-8Ng">
-                                <rect key="frame" x="169" y="455" width="37" height="37"/>
+                                <rect key="frame" x="169" y="461" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Lcn-DN-8Ng" firstAttribute="top" secondItem="YZY-kT-R99" secondAttribute="bottom" constant="36" id="JSM-t1-vRx"/>
-                            <constraint firstItem="YZY-kT-R99" firstAttribute="top" secondItem="PYE-0M-NJI" secondAttribute="bottom" constant="16" id="M3q-MF-Hkx"/>
-                            <constraint firstItem="PYE-0M-NJI" firstAttribute="leading" secondItem="DNA-lR-0us" secondAttribute="leading" id="R7i-mM-73F"/>
                             <constraint firstItem="DNA-lR-0us" firstAttribute="trailing" secondItem="YZY-kT-R99" secondAttribute="trailing" constant="16" id="Z29-Ak-NYF"/>
                             <constraint firstItem="Lcn-DN-8Ng" firstAttribute="leading" secondItem="DNA-lR-0us" secondAttribute="leading" constant="169" id="bnh-nO-O4K"/>
-                            <constraint firstItem="PYE-0M-NJI" firstAttribute="top" secondItem="DNA-lR-0us" secondAttribute="top" constant="10" id="sQk-Qf-rMk"/>
-                            <constraint firstItem="PYE-0M-NJI" firstAttribute="trailing" secondItem="DNA-lR-0us" secondAttribute="trailing" id="vLq-Of-zFv"/>
+                            <constraint firstItem="YZY-kT-R99" firstAttribute="top" secondItem="DNA-lR-0us" secondAttribute="top" id="sEB-jT-ZfT"/>
                             <constraint firstItem="YZY-kT-R99" firstAttribute="leading" secondItem="DNA-lR-0us" secondAttribute="leading" constant="16" id="yPW-LZ-t3d"/>
                             <constraint firstItem="DNA-lR-0us" firstAttribute="trailing" secondItem="Lcn-DN-8Ng" secondAttribute="trailing" constant="169" id="ywF-q5-BlP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DNA-lR-0us"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Cadastro" id="71F-2W-n7t"/>
                     <connections>
                         <outlet property="btAddEdit" destination="EeH-1w-Hkw" id="Cy3-gW-mXb"/>
                         <outlet property="loading" destination="Lcn-DN-8Ng" id="pB3-Y6-dgU"/>
                         <outlet property="scGasType" destination="xr8-xw-Eix" id="3U1-Di-bHo"/>
-                        <outlet property="tfBrand" destination="bfv-ja-tl1" id="viY-R1-QCB"/>
-                        <outlet property="tfName" destination="ew0-xr-aV6" id="bcm-KW-j9h"/>
+                        <outlet property="tfBrand" destination="ew0-xr-aV6" id="bcm-KW-j9h"/>
+                        <outlet property="tfName" destination="bfv-ja-tl1" id="viY-R1-QCB"/>
                         <outlet property="tfPrice" destination="K8V-Hw-OUD" id="MFp-ra-6Me"/>
                     </connections>
                 </viewController>
@@ -259,6 +245,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bky-oA-WvY"/>
+        <segue reference="UzB-0O-WRk"/>
     </inferredMetricsTieBreakers>
 </document>

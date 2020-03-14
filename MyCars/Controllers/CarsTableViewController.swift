@@ -60,8 +60,8 @@ class CarsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         let car = cars[indexPath.row]
-        cell.textLabel?.text = car.name
-        cell.detailTextLabel?.text = car.brand
+        cell.textLabel?.text = car.brand
+        cell.detailTextLabel?.text = car.name
 
         return cell
     }
@@ -79,10 +79,9 @@ class CarsTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
             let car  = cars[indexPath.row]
-            REST.delete(car: car) { (seccess) in
-                if seccess {
+            REST.delete(car: car) { (success) in
+                if success {
                     self.cars.remove(at: indexPath.row)
                     DispatchQueue.main.async {
                         tableView.deleteRows(at: [indexPath], with: .fade)
